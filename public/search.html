@@ -9,18 +9,6 @@
 	<link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
 	<script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
 	<script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-	<script>
-		$(function() {
-			$(".search").click(function() {
-				
-				console.log("Search Button Pressed!");
-			});
-		});
-		
-		function search() {
-			//location.href = "http://localhost:8000/results/swag/yolo";
-		}
-	</script>
 	</head>
 
 <body>
@@ -39,6 +27,8 @@
 		<form action="/results" method="get">
 		
 			<h3 style="text-align: center;"><b>Search for Tweets</b></h3>
+			
+			[MESSAGE]
 			
 			<!-- Hashtags -->
 			<div data-role="fieldcontain">
@@ -72,7 +62,7 @@
 			
 			<!-- Search Button -->
 			<div data-role="content">
-				<input type="submit" value="Search" data-theme="b" data-icon="search" data-iconpos="left">
+				<input type="submit" class="search" value="Search" data-theme="b" data-icon="search" data-iconpos="left">
 			</div>
 			
 		</form>
