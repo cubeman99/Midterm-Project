@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title></title>
+	<link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+	<script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+	<script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script>
+		$(function() {
+			$(".search").click(function() {
+				
+				console.log("Search Button Pressed!");
+			});
+		});
+		
+		function search() {
+			//location.href = "http://localhost:8000/results/swag/yolo";
+		}
+	</script>
+	</head>
+
+<body>
+<div data-role="page" id="page1">
+
+	<div data-theme="b" data-role="header">
+		<a data-role="button" data-theme="b" href="/" data-icon="arrow-l">
+			Home
+		</a>
+		<h3>
+			Search
+		</h3>
+	</div>
+	
+	<div data-role="content">
+		<form action="/results" method="get">
+		
+			<h3 style="text-align: center;"><b>Search for Tweets</b></h3>
+			
+			<!-- Hashtags -->
+			<div data-role="fieldcontain">
+				<label for="ht1">Hashtag 1</label>
+				<input name="hashtag1" id="ht1" placeholder="" value="" type="text">
+				<label for="ht2">Hashtag 2</label>
+				<input name="hashtag2" id="ht2" placeholder="" value="" type="text">
+			</div>
+				
+			<!-- Date Range -->
+			<div data-role="fieldcontain">
+				<label for="date_from"><b>Date:</b> From</label>
+				<input name="date_from" id="date_from" placeholder="" value="" type="date">
+				<label for="date_to"><b>Date:</b> To</label>
+				<input name="date_to" id="date_to" placeholder="" value="" type="date">
+			</div>
+			
+			<!-- Sentiment Score Min/Max -->
+			<div data-role="fieldcontain">
+				<label for="score_min">Minimum Sentiment Score</label>
+				<input name="score_min" id="score_min" placeholder="" value="" type="number">
+				<label for="score_max">Maximum Sentiment Score</label>
+				<input name="score_max" id="score_max" placeholder="" value="" type="number">
+			</div>
+			
+			<!-- Mile Radius -->
+			<div data-role="fieldcontain">
+				<label for="slider1">Mile Radius From Your Location</label>
+				<input id="slider1" type="range" name="radius" value="40" min="0" max="100" data-highlight="true">
+			</div>
+			
+			<!-- Search Button -->
+			<div data-role="content">
+				<input type="submit" value="Search" data-theme="b" data-icon="search" data-iconpos="left">
+			</div>
+			
+		</form>
+	</div>
+</div>
+</body>
+
+</html>
