@@ -6,9 +6,8 @@ var express     = require("express");
 var fs          = require("fs");
 var util        = require('util');
 var twitter     = require('twitter');
-var sentimental = require("sentimental").analyze;
+var sentimental = require("Sentimental").analyze;
 var app         = express();
-var port        = 8000;
 
 // Create authenticated twitter object.
 var twit = new twitter({
@@ -294,5 +293,5 @@ app.get('/tweet/:id', function(req, res) {
 
 
 // Start the server.
-app.listen(port);
-console.log("Listening on Port 8000.");
+app.listen(process.env.PORT || 8000, process.env.IP);
+console.log("Server is Running.");
